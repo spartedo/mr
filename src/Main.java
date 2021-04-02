@@ -16,14 +16,11 @@ public class Main {
             String text = keyboard.nextLine();
             String[] parts = text.split(" ");
 
-            if (parts[0].equals("login")) {
-                login(parts);
-            } else if (parts[0].equals("whoami")) {
-                whoami(parts);
-            } else if (parts[0].equals("exit")) {
-                resume = false;
-            } else {
-                System.out.println("Unknown command");
+            switch (parts[0]) {
+                case "login" -> login(parts);
+                case "whoami" -> whoami(parts);
+                case "exit" -> resume = false;
+                default -> System.out.println("Unknown command");
             }
         }
     }
@@ -52,5 +49,3 @@ public class Main {
         }
     }
 }
-
-//
